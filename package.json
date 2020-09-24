@@ -1,6 +1,6 @@
 {
   "name": "typescript-request-utils",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Some utilities to simplify request handling on TypeScript",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
