@@ -1,6 +1,6 @@
 import { act, renderHook } from "@testing-library/react-hooks";
-import { RequestStatus } from "./src/requestStatus";
-import { useRequest } from "./src/useRequest";
+import { RequestStatus } from "./requestStatus";
+import { useRequest } from "./useRequest";
 
 interface Point {
   x: number;
