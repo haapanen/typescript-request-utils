@@ -22,8 +22,8 @@
     "react": "^16.13.1"
   },
   "scripts": {
-    "prepublish": "tsc",
-    "test": "jest --watchAll"
+    "prepare": "tsc",
+    "test": "jest --watchAll --rootDir \"./src\""
   },
   "author": "Jussi Haapanen",
   "license": "MIT"

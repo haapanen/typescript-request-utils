@@ -6,8 +6,13 @@ import {
 import { RequestStatus } from "./requestStatus";
 import { useRequestState } from "./useRequestState";
 
+// Returns the type of promise payload
 type Unwrap<T> = T extends PromiseLike<infer U> ? U : T;
 
+/**
+ * Returns a request state and a callback to trigger the request
+ * @param func API method call to call when request has been triggered
+ */
 export function useRequest<
   TApiMethod extends (...args: any) => any,
   TParameters extends Parameters<TApiMethod>,
@@ -32,6 +37,7 @@ export function useRequest<
         requestPayload: parameters,
       });
 
+      // FIXME: figure out a way to handle the typing without as any
       const response = await func(...(parameters as any));
 
       const state: CompleteRequestState<TResponse, TParameters> = {

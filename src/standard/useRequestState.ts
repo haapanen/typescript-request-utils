@@ -2,6 +2,9 @@ import React from "react";
 import { RequestState } from "./requestState";
 import { RequestStatus } from "./requestStatus";
 
+/**
+ * Returns a request state and a function to update it
+ */
 export function useRequestState<
   TResponsePayload,
   TRequestPayload,
