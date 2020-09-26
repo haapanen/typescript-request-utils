@@ -6,6 +6,8 @@ import {
 import { RequestStatus } from "./requestStatus";
 import { useRequestState } from "./useRequestState";
 
+type Unwrap<T> = T extends PromiseLike<infer U> ? U : T;
+
 export function useRequest<
   TApiMethod extends (...args: any) => any,
   TParameters extends Parameters<TApiMethod>,

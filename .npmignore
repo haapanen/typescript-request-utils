@@ -3,3 +3,7 @@ index.test.ts
 tsconfig.json
 yarn.lock
 src
+node_modules
+.vs
+.vscode
+.log
