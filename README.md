@@ -18,8 +18,12 @@ function Component(props: {}) {
   // if api is called in a useEffect. If not, a new API
   // will be initialized whenever React renders the view
   // causing an infinite loop
-  const api = React.useMemo(new ItemApi(), []);
-  api.getItems.bind(api);
+  const api = React.useMemo(() => {
+    const itemApi = new ItemApi();
+    itemApi.getItems = itemApi.getItems.bind(itemApi);
+    return itemApi;
+  }, []);
+  
   const [itemsRequest, loadItems] = useOpenApiRequest(api.getItems);
 
   if (itemsRequest.type === OpenApiRequestStatus.Pending) {
